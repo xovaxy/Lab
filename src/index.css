@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Xovaxy theme globals */
+body {
+	@apply bg-gradient-to-br from-background-start to-background-end text-text-primary font-body;
+	min-height: 100vh;
+	background-attachment: fixed;
+	overflow-y: auto;
+	-ms-overflow-style: none; /* IE/Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.glass {
+	background: rgba(10, 10, 18, 0.7);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+	background: rgba(20, 20, 36, 0.5);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid rgba(0, 245, 212, 0.15);
+}
+
+.hover-glow:hover { box-shadow: 0 0 20px rgba(0, 245, 212, 0.7); }
+.hover-glow-purple:hover { box-shadow: 0 0 20px rgba(155, 93, 229, 0.7); }
+.hover-glow-pink:hover { box-shadow: 0 0 20px rgba(241, 91, 181, 0.7); }
+
+.text-gradient {
+	background: linear-gradient(90deg, #00f5d4, #9b5de5, #f15bb5);
+	background-size: 200% 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradient-x 8s ease infinite;
+}
+
+.floating { animation: float 6s ease-in-out infinite; }
+
+/* Stagger helpers (use with [style=\"animation-delay:XXXms\"]) */
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}
+
+/* Hide scrollbar visuals without disabling scroll */
+::-webkit-scrollbar { display: none; }
+
+/* Utility to hide scrollbars on specific containers while keeping scroll */
+.no-scrollbar {
+	-ms-overflow-style: none; /* IE/Edge */
+	scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
