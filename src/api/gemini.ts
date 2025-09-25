@@ -2,7 +2,7 @@
 // Utility to call Gemini proxy for chemical reaction analysis with optional context metadata
 
 // NOTE: For production consider using a relative path: const API_URL = '/api/gemini';
-const API_URL = 'https://lab-cyan-nu.vercel.app/api/gemini';
+const API_URL = 'https://lab.xovaxy.in/api/gemini';
 
 export interface GeminiAnalysis {
   result: string;
@@ -66,6 +66,7 @@ export async function getGeminiReactionAnalysis(reactantNames: string[], context
     throw err;
   }
 }
+
 
 
 
